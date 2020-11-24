@@ -5,7 +5,7 @@ using System.Drawing.Drawing2D;
 using System.Windows.Forms;
 using System.Windows.Forms.Design;
 
-namespace WindowsFormsControlLibrary1
+namespace TenAndLitvinovWFControlLibrary
 {
     [Designer(typeof(ControlDesignerEx))]
     public partial class LabeledTextBox : Control
@@ -27,14 +27,19 @@ namespace WindowsFormsControlLibrary1
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
         [Bindable(true)]*/
         //public override string Text { get; set; }
-        
+        protected override Size DefaultSize
+        {
+            get { return new Size(125, 15+26); }
+        }
+        //----------------------------------------------------------------------
         private TextBox tb;
+        //---------------------------------------------------------------------------------
         public LabeledTextBox()// : base()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
             InitializeComponent();
-            this.Width = 15 + 26;
+            //this.Width = 15 + 26;
             
             tb = new TextBox();
             Controls.Add(tb);

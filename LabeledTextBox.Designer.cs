@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsControlLibrary1
+﻿namespace TenAndLitvinovWFControlLibrary
 {
     partial class LabeledTextBox
     {
