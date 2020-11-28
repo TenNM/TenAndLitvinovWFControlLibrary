@@ -22,11 +22,7 @@ namespace TenAndLitvinovWFControlLibrary
         }
         public Color LabelColor { get; set; } = Color.Black;
 
-        /*[EditorBrowsable(EditorBrowsableState.Always)]
-        [Browsable(true)]
-        [DesignerSerializationVisibility(DesignerSerializationVisibility.Visible)]
-        [Bindable(true)]*/
-        //public override string Text { get; set; }
+        
         protected override Size DefaultSize
         {
             get { return new Size(125, 15+26); }
@@ -39,7 +35,7 @@ namespace TenAndLitvinovWFControlLibrary
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
             InitializeComponent();
-            //this.Width = 15 + 26;
+            //Height = 15 + 26;
             
             tb = new TextBox();
             Controls.Add(tb);
@@ -55,6 +51,8 @@ namespace TenAndLitvinovWFControlLibrary
             graph.Clear(Parent.BackColor);
             graph.DrawString(LabelText, Font, new SolidBrush(LabelColor), new Point(0, 0));
             //
+            //Height = 15 + 26;
+            Size = DefaultSize;
             tb.Location = new Point(0, 15);
             tb.Text = this.Text;
             tb.Width = this.Width;
