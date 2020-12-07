@@ -35,12 +35,14 @@ namespace TenAndLitvinovWFControlLibrary
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
             //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
             InitializeComponent();
-            //Height = 15 + 26;
+            Height = 15 + 26;
+            Width = 125;
             
             tb = new TextBox();
             Controls.Add(tb);
             tb.TextChanged += Tb_TextChanged;
-            Text = "Text";
+            //Text = "Text";
+
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -51,8 +53,8 @@ namespace TenAndLitvinovWFControlLibrary
             graph.Clear(Parent.BackColor);
             graph.DrawString(LabelText, Font, new SolidBrush(LabelColor), new Point(0, 0));
             //
-            //Height = 15 + 26;
-            Size = DefaultSize;
+            Height = 15 + 26;
+            //Size = DefaultSize;
             tb.Location = new Point(0, 15);
             tb.Text = this.Text;
             tb.Width = this.Width;
