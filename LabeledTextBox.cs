@@ -10,7 +10,7 @@ namespace TenAndLitvinovWFControlLibrary
     [Designer(typeof(ControlDesignerEx))]
     public partial class LabeledTextBox : Control
     {
-        //public string LabelText { get; set; } = "LabelText";
+        //-------------------------------------------------------------
         private string _labelText = "LabelText";
         public string LabelText
         {
@@ -20,15 +20,19 @@ namespace TenAndLitvinovWFControlLibrary
                 Invalidate();
             }
         }
+        //------------------------------------------------------------
         public Color LabelColor { get; set; } = Color.Black;
-
-        
+        //----------------------------------------------------------
         protected override Size DefaultSize
         {
             get { return new Size(125, 15+26); }
         }
         //----------------------------------------------------------------------
         private TextBox tb;
+        public TextBox TextBox//????????
+        {
+            get { return tb; }
+        }
         //---------------------------------------------------------------------------------
         public LabeledTextBox()// : base()
         {
