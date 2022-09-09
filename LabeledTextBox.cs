@@ -29,15 +29,14 @@ namespace TenAndLitvinovWFControlLibrary
         }
         //----------------------------------------------------------------------
         private TextBox tb;
-        public TextBox TextBox//????????
+        public TextBox TextBox
         {
             get { return tb; }
         }
         //---------------------------------------------------------------------------------
-        public LabeledTextBox()// : base()
+        public LabeledTextBox()
         {
             SetStyle(ControlStyles.AllPaintingInWmPaint, true);
-            //SetStyle(ControlStyles.AllPaintingInWmPaint | ControlStyles.OptimizedDoubleBuffer | ControlStyles.ResizeRedraw | ControlStyles.SupportsTransparentBackColor | ControlStyles.UserPaint, true);
             InitializeComponent();
             Height = 15 + 26;
             Width = 125;
@@ -45,8 +44,6 @@ namespace TenAndLitvinovWFControlLibrary
             tb = new TextBox();
             Controls.Add(tb);
             tb.TextChanged += Tb_TextChanged;
-            //Text = "Text";
-
         }
 
         protected override void OnPaint(PaintEventArgs e)
@@ -56,13 +53,11 @@ namespace TenAndLitvinovWFControlLibrary
             graph.SmoothingMode = SmoothingMode.HighQuality;
             graph.Clear(Parent.BackColor);
             graph.DrawString(LabelText, Font, new SolidBrush(LabelColor), new Point(0, 0));
-            //
+            
             Height = 15 + 26;
-            //Size = DefaultSize;
             tb.Location = new Point(0, 15);
             tb.Text = this.Text;
             tb.Width = this.Width;
-            //Controls.Add(tb);
         }
         protected override void OnTextChanged(EventArgs e)
         {
@@ -71,7 +66,6 @@ namespace TenAndLitvinovWFControlLibrary
         private void Tb_TextChanged(object sender, EventArgs e)
         {
             this.Text = tb.Text;
-            //tb.Invalidate();
         }
     }//c
     //----------------------------------------------------------------------------------
